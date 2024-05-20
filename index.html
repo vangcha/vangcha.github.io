@@ -3,47 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESP2 Calculator</title>
+    <title>Hello World</title>
 </head>
 <body>
-    <form>
-        <label for="num1">EBITA:</label>
-        <input type="number" id="ebita" value="25000000"> <!-- Default value: 5 -->
-        <br>
-        <label for="esptotal">ESP2 Total:</label>
-        <input type="number" id="esptotal" value="929757766"> <!-- Default value: 3 -->
-        <br>
-        <label for="youresp">Your ESP2 Points:</label>
-        <input type="number" id="youresp" value="1"> <!-- Default value: 3 -->
-        <br>
-        <button type="button" onclick="calculateSum()">Calculate</button>
-    </form>
-    <p id="your_result"></p>
-
-    <script>
-		function numberWithCommas(x) {
-			return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-		}
-        function calculateSum() {
-            const ebita = parseFloat(document.getElementById("ebita").value);
-            const esp_total = parseFloat(document.getElementById("esptotal").value);
-            const your_esp = parseFloat(document.getElementById("youresp").value);
-            const sum = 1 + 2;
-			const multiplier = 9.5;
-			const ebita_multiplier = ebita * multiplier;
-			const to_the_field = ebita_multiplier * .5;
-			const left_to_share = .7;
-			const esp2 = to_the_field * left_to_share;
-			const your_percent = your_esp / esp_total;
-			const your_check = your_percent * esp2;
-			let USDollar = new Intl.NumberFormat('en-US', {
-				style: 'currency',
-				currency: 'USD',
-			}); 
-			
-
-            document.getElementById("your_result").textContent = `Your expected check: ${USDollar.format(your_check)}`;
-        }
-    </script>
+Hello World!
 </body>
 </html>
