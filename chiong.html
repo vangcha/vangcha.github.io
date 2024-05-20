@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP2</title>
+</head>
+<body>
+    <form>
+        <label for="num1">EBITA:</label>
+        <input type="number" id="ebita" value="25000000"> <!-- Default value: 5 -->
+        <br>
+        <label for="esptotal">ESP Total:</label>
+        <input type="number" id="esptotal" value="929757766"> <!-- Default value: 3 -->
+        <br>
+        <label for="chiongesp">Chiong ESP Number:</label>
+        <input type="number" id="chiongesp" value="3660344"> <!-- Default value: 3 -->
+        <br>
+        <label for="sophornesp">Sophorn ESP Number:</label>
+        <input type="number" id="sophornesp" value="1785414"> <!-- Default value: 3 -->
+        <br>
+        <label for="xaeesp">Xae ESP Number:</label>
+        <input type="number" id="xaeesp" value="1627303"> <!-- Default value: 3 -->
+        <br>
+        <label for="touesp">Tou ESP Number:</label>
+        <input type="number" id="touesp" value="958264"> <!-- Default value: 3 -->
+        <br>
+        <label for="chanbolesp">Chanbol ESP Number:</label>
+        <input type="number" id="chanbolesp" value="482676"> <!-- Default value: 3 -->
+        <br>
+        <label for="dinaesp">Dina ESP Number:</label>
+        <input type="number" id="dinaesp" value="444683"> <!-- Default value: 3 -->
+        <br>
+        <label for="lisaesp">Lisa ESP Number:</label>
+        <input type="number" id="lisaesp" value="265289"> <!-- Default value: 3 -->
+        <br>
+        <label for="pahouaesp">Pahoua ESP Number:</label>
+        <input type="number" id="pahouaesp" value="196274"> <!-- Default value: 3 -->
+        <br>
+        <label for="somalyesp">Somaly ESP Number:</label>
+        <input type="number" id="somalyesp" value="113129"> <!-- Default value: 3 -->
+        <br>
+        <button type="button" onclick="calculateSum()">Calculate</button>
+    </form>
+    <p id="chiong_result"></p>
+    <p id="sophorn_result"></p>
+    <p id="xae_result"></p>
+    <p id="tou_result"></p>
+    <p id="chanbol_result"></p>
+    <p id="dina_result"></p>
+    <p id="lisa_result"></p>
+    <p id="pahoua_result"></p>
+    <p id="somaly_result"></p>
+
+    <script>
+		function numberWithCommas(x) {
+			return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+		}
+        function calculateSum() {
+            const ebita = parseFloat(document.getElementById("ebita").value);
+            const esp_total = parseFloat(document.getElementById("esptotal").value);
+            const chiong_esp = parseFloat(document.getElementById("chiongesp").value);
+            const sophorn_esp = parseFloat(document.getElementById("sophornesp").value);
+            const xae_esp = parseFloat(document.getElementById("xaeesp").value);
+            const tou_esp = parseFloat(document.getElementById("touesp").value);
+            const chanbol_esp = parseFloat(document.getElementById("chanbolesp").value);
+            const dina_esp = parseFloat(document.getElementById("dinaesp").value);
+            const lisa_esp = parseFloat(document.getElementById("lisaesp").value);
+            const pahoua_esp = parseFloat(document.getElementById("pahouaesp").value);
+            const somaly_esp = parseFloat(document.getElementById("somalyesp").value);
+            const sum = 1 + 2;
+			const multiplier = 9.5;
+			const ebita_multiplier = ebita * multiplier;
+			const to_the_field = ebita_multiplier * .5;
+			const left_to_share = .7;
+			const esp2 = to_the_field * left_to_share;
+			const chiong_percent = chiong_esp / esp_total;
+			const sophorn_percent = sophorn_esp / esp_total;
+			const xae_percent = xae_esp / esp_total;
+			const tou_percent = tou_esp / esp_total;
+			const chanbol_percent = chanbol_esp / esp_total;
+			const dina_percent = dina_esp / esp_total;
+			const lisa_percent = lisa_esp / esp_total;
+			const pahoua_percent = pahoua_esp / esp_total;
+			const somaly_percent = somaly_esp / esp_total;
+			const chiong_check = chiong_percent * esp2;
+			const sophorn_check = sophorn_percent * esp2;
+			const xae_check = xae_percent * esp2;
+			const tou_check = tou_percent * esp2;
+			const chanbol_check = chanbol_percent * esp2;
+			const dina_check = dina_percent * esp2;
+			const lisa_check = lisa_percent * esp2;
+			const pahoua_check = pahoua_percent * esp2;
+			const somaly_check = somaly_percent * esp2;
+			let USDollar = new Intl.NumberFormat('en-US', {
+				style: 'currency',
+				currency: 'USD',
+			}); 
+			
+
+            document.getElementById("chiong_result").textContent = `Chiong's expected check: ${USDollar.format(chiong_check)}`;
+            document.getElementById("sophorn_result").textContent = `Sophorn's expected check: ${USDollar.format(sophorn_check)}`;
+            document.getElementById("xae_result").textContent = `Xae's expected check: ${USDollar.format(xae_check)}`;
+            document.getElementById("tou_result").textContent = `Tou's expected check: ${USDollar.format(tou_check)}`;
+            document.getElementById("chanbol_result").textContent = `Chanbol's expected check: ${USDollar.format(chanbol_check)}`;
+            document.getElementById("dina_result").textContent = `Dina's expected check: ${USDollar.format(dina_check)}`;
+            document.getElementById("lisa_result").textContent = `Lisa's expected check: ${USDollar.format(lisa_check)}`;
+            document.getElementById("pahoua_result").textContent = `Pahoua's expected check: ${USDollar.format(pahoua_check)}`;
+            document.getElementById("somaly_result").textContent = `Somaly's expected check: ${USDollar.format(somaly_check)}`;
+        }
+    </script>
+</body>
+</html>
